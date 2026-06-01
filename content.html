@@ -140,5 +140,15 @@
 <!-- Instagram embed script — required for embeds to render -->
 <script async src="//www.instagram.com/embed.js"></script>
 
+<script>
+  document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('play', () => {
+      document.querySelectorAll('video').forEach(other => {
+        if (other !== video) other.pause();
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
