@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryan Vogt-Nilsen — Quality Entertainment & Questionable Decisions!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --red:    #D94A3A;
+      --teal:   #4A7C7B;
+      --yellow: #E1B648;
+      --ink:    #1A1A1A;
+      --cream:  #EDD9A3;
+      --cream2: #E2CE96;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      font-family: 'Atkinson Hyperlegible', Georgia, serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: 0.055;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .dots {
+      background-image: radial-gradient(circle, rgba(26,26,26,0.55) 1px, transparent 1px);
+      background-size: 9px 9px;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.12em;
+      padding: 8px 16px; border: 2px solid var(--ink);
+      cursor: pointer; text-decoration: none; line-height: 1;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .btn-red  { background: var(--red); color: #fff; box-shadow: 3px 3px 0 var(--ink); }
+    .btn-dark { background: var(--ink); color: var(--cream); box-shadow: 3px 3px 0 #000; }
+    .btn:hover  { transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--ink); }
+    .btn:active { transform: translate(3px,3px); box-shadow: none; }
+    .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+    .card {
+      padding: 24px 16px 22px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background 0.15s ease;
+    }
+    .card:last-child { border-right: none; }
+    .card:hover { background: rgba(255,255,255,0.05); }
+
+    .card-cta {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.1em;
+      color: var(--yellow); text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+      margin-top: auto;
+    }
+    .card-cta:hover { border-bottom-color: var(--yellow); }
+
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker { display: inline-flex; animation: marquee 42s linear infinite; white-space: nowrap; }
+    .ticker:hover { animation-play-state: paused; }
+
+    .inp {
+      width: 100%; padding: 9px 13px;
+      background: #fff; border: 2px solid var(--ink);
+      font-family: 'Atkinson Hyperlegible', serif;
+      font-size: 0.85rem; color: var(--ink);
+    }
+    .inp::placeholder { color: #9a8a6a; }
+    .inp:focus { outline: 2px solid var(--red); outline-offset: 0; }
+  </style>
+</head>
+<body>
+
+
+
+<!-- ══ HERO ══ -->
+<section style="background:var(--cream); position:relative; overflow:hidden; flex:1; display:flex; flex-direction:column;">
+
+  <div class="dots" style="position:absolute; inset:0; opacity:0.05; pointer-events:none; z-index:0;"></div>
+
+  <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:480px 1fr; position:relative; z-index:1; flex:1; width:100%;">
+
+    <!-- Photo column -->
+    <div style="position:relative; overflow:visible;">
+      <img src="brand_assets/hero-blob.png" alt=""
+           style="position:absolute; left:1px; top:75px; width:850px; z-index:1; pointer-events:none; filter:drop-shadow(4px 6px 12px rgba(0,0,0,0.35));">
+      <img src="brand_assets/new hero image.png" alt="Bryan Vogt-Nilsen"
+           style="position:absolute; bottom:0px; left:3px; width:160%; z-index:2; object-fit:contain; object-position:bottom left; filter:drop-shadow(4px 6px 12px rgba(0,0,0,0.35));">
+    </div>
+
+    <!-- Text column -->
+    <div style="padding:36px 40px 36px 48px; display:flex; flex-direction:column; justify-content:center; position:relative; align-self:stretch;">
+
+      <div style="margin-bottom:18px;">
+        <img src="brand_assets/headline-name.png" alt="Bryan Vogt-Nilsen!" style="width:100%; display:block;">
+      </div>
+
+      <!-- Email signup -->
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:0.95rem; letter-spacing:0.1em; color:var(--ink); margin-bottom:10px; opacity:0.88;">
+        Join the email list to find out where I'm performing next
+      </p>
+      <form action="https://app.kit.com/forms/9508525/subscriptions" method="post" target="_blank" style="display:flex; gap:8px; margin-bottom:8px;">
+        <input type="email" name="email_address" placeholder="Email address *" class="inp" style="flex:1;" aria-label="Email address" required>
+        <input type="text" name="fields[city]" placeholder="City *" class="inp" style="width:140px; flex-shrink:0;" aria-label="City">
+        <button type="submit" class="btn btn-red" style="flex-shrink:0; white-space:nowrap;">SIGN UP ▶</button>
+      </form>
+      <p style="font-size:0.65rem; color:var(--ink); opacity:0.45; margin-top:2px; letter-spacing:0.04em; font-style:italic;">
+        No spam. Unsubscribe anytime.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ SERVICE CARDS ══ -->
+<section style="background:var(--ink); border-bottom:2.5px solid #000;">
+  <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(5,1fr);">
+
+    <!-- STAND UP COMEDY -->
+    <div class="card" tabindex="0">
+      <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+        <img src="brand_assets/Icon-comedy.png" alt="Stand Up Comedy" style="height:80px; width:auto; object-fit:contain;">
+      </div>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:5px; line-height:1.2;">STAND UP</p>
+      <a href="standup.html" class="card-cta">WATCH MY SPECIAL ▶</a>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="card" tabindex="0">
+      <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+        <img src="brand_assets/Icon-content.png" alt="Content" style="height:80px; width:auto; object-fit:contain;">
+      </div>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:5px; line-height:1.2;">CONTENT</p>
+      <a href="content.html" class="card-cta">WATCH NOW ▶</a>
+    </div>
+
+    <!-- BRAND WORK -->
+    <div class="card" tabindex="0">
+      <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+        <img src="brand_assets/Icon-commerical.png" alt="Brand Work" style="height:80px; width:auto; object-fit:contain;">
+      </div>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:5px; line-height:1.2;">BRAND WORK</p>
+      <a href="brandwork.html" class="card-cta">SEE THE WORK ▶</a>
+    </div>
+
+    <!-- FINALS WEEK -->
+    <div class="card" tabindex="0">
+      <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+        <img src="brand_assets/Icon-motion-picture.png" alt="Finals Week" style="height:80px; width:auto; object-fit:contain;">
+      </div>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:5px; line-height:1.2;">FINALS WEEK</p>
+      <a href="finalsweek.html" class="card-cta">WATCH MY FEATURE FILM ▶</a>
+    </div>
+
+    <!-- RENTER'S GAME -->
+    <div class="card" tabindex="0">
+      <div style="height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+        <img src="brand_assets/Renters-game-box.png" alt="The Renter's Game" style="height:80px; width:auto; object-fit:contain; filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.4));">
+      </div>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.08em; color:var(--cream); margin-bottom:5px; line-height:1.2;">THE RENTER'S GAME</p>
+      <a href="rentersgame.html" class="card-cta">LEARN ABOUT MY BOARD GAME ▶</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ══ FOOTER ══ -->
+<div style="background:var(--red); padding:11px 24px; text-align:center;">
+  <p style="font-family:'Bebas Neue',sans-serif; font-size:0.78rem; letter-spacing:0.14em; color:#fff;">
+    For bookings or business inquiries email <a href="mailto:bryanvogtnilsen@gmail.com" style="color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.5);">bryanvogtnilsen@gmail.com</a>
+  </p>
+</div>
+
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</body>
+</html>
