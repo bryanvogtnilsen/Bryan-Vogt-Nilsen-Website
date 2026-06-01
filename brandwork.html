@@ -17,6 +17,12 @@
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     }
     .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:24px; }
+    @media (max-width: 767px) {
+      nav { padding: 12px 16px !important; gap: 12px !important; }
+      .nav-socials { display: none !important; }
+      .grid { grid-template-columns: 1fr !important; }
+      section { padding: 24px 16px !important; }
+    }
   </style>
 </head>
 <body>
@@ -29,7 +35,7 @@
   </a>
   <div style="width:1px; height:36px; background:rgba(255,255,255,0.12);"></div>
   <h1 style="font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:0.1em; color:var(--cream); line-height:1;">BRAND WORK</h1>
-  <div style="display:flex; align-items:center; gap:16px; margin-left:auto;">
+  <div class="nav-socials" style="display:flex; align-items:center; gap:16px; margin-left:auto;">
     <a href="https://www.instagram.com/bryanvogtnilsen" target="_blank" aria-label="Instagram" style="color:rgba(237,217,163,0.5); transition:color 0.15s;" onmouseover="this.style.color='#EDD9A3'" onmouseout="this.style.color='rgba(237,217,163,0.5)'">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     </a>
